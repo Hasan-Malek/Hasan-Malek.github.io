@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Projects | Hasan Malek</title>
+
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+
+    <meta name="description"
+        content="Projects by Hasan Malek — offensive security tools, malware demos, Android forensics utilities, and real-world exploitation frameworks.">
+    <meta name="author" content="Hasan Malek">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .projects-section {
+            margin-top: 40px;
+        }
+
+        .projects-intro {
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        /* HERO PROJECT (SPY) */
+        .project-hero {
+            border: 1px solid #00ff55;
+            border-radius: 10px;
+            padding: 20px 22px;
+            background: rgba(0, 0, 0, 0.85);
+            box-shadow: 0 0 15px #00ff55;
+            margin-bottom: 35px;
+        }
+
+        .project-hero-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .project-hero-title {
+            font-size: 1.6rem;
+            text-shadow: 0 0 8px #00ff55;
+        }
+
+        .project-hero-badge {
+            font-size: 0.8rem;
+            border: 1px solid #00ff55;
+            padding: 4px 10px;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        .project-hero-sub {
+            opacity: 0.85;
+            margin-bottom: 8px;
+        }
+
+        .project-hero-list {
+            margin-left: 18px;
+            margin-top: 6px;
+            margin-bottom: 10px;
+        }
+
+        .project-hero-list li {
+            margin-bottom: 4px;
+        }
+
+        .project-links {
+            margin-top: 10px;
+        }
+
+        .project-links a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        /* FILTER BAR */
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0 20px 0;
+        }
+
+        .filter-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-right: 5px;
+        }
+
+        .filter-btn {
+            border: 1px solid #00ff55;
+            background: transparent;
+            color: #00ff55;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .filter-btn.active {
+            background: #00ff55;
+            color: #000;
+            box-shadow: 0 0 8px #00ff55;
+        }
+
+        .filter-btn:hover {
+            background: #00ff55;
+            color: #000;
+        }
+
+        /* PROJECT GRID */
+        .projects-grid {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            border: 1px solid #00ff55;
+            border-radius: 10px;
+            padding: 16px 18px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 10px rgba(0, 255, 85, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 180px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 16px #00ff55;
+            border-color: #55ff99;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+            text-shadow: 0 0 6px #00ff55;
+        }
+
+        .project-desc {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .project-tags {
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            border: 1px solid #00ff55;
+            border-radius: 999px;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            margin-right: 6px;
+            margin-bottom: 4px;
+            opacity: 0.85;
+        }
+
+        .project-footer-link {
+            margin-top: auto;
+        }
+
+        .project-footer-link a {
+            font-size: 0.9rem;
+        }
+
+        /* MOBILE TWEAKS */
+        @media (max-width: 700px) {
+            .project-hero-title {
+                font-size: 1.3rem;
+            }
+
+            .project-hero {
+                padding: 16px 14px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="scanlines"></div>
+
+    <!-- MOBILE MENU BUTTON -->
+    <div class="menu-btn">≡</div>
+
+    <!-- FULLSCREEN MOBILE MENU -->
+    <div id="mobileMenu" class="mobile-menu" role="dialog" aria-hidden="true">
+        <div class="close-btn" onclick="closeMenu()">✖</div>
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <header>
+        <h1 class="page-title">Projects</h1>
+        <p class="subtitle">Offensive tools, malware experiments, and security research in code form.</p>
+    </header>
+
+    <nav>
+        <a href="./">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section class="section projects-section">
+
+        <h2>Featured Project</h2>
+        <p class="projects-intro">
+            These are not “hello world” repos.
+            Every project below was built either to break something, understand something, or protect someone.
+        </p>
+
+        <!-- HERO: SPY -->
+        <div class="project-hero">
+            <div class="project-hero-header">
+                <div class="project-hero-title">SPY — Snake Plays You</div>
+                <div class="project-hero-badge">Featured · Malware Demo · Linux</div>
+            </div>
+            <p class="project-hero-sub">
+                A fully functional Snake game… that secretly runs a payload in the background.
+                A live demonstration of how harmless software can turn into a stealthy security threat.
+            </p>
+            <ul class="project-hero-list">
+                <li>Blends entertainment with a hidden background thread.</li>
+                <li>Downloads and executes a remote payload for real-world simulation.</li>
+                <li>Zero visible lag or indicators — looks innocent, behaves dangerous.</li>
+            </ul>
+            <div class="project-links">
+                <a href="https://github.com/Hasan-Malek/SPY" target="_blank" class="btn">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+
+        <!-- FILTER BAR -->
+        <div class="filter-bar">
+            <span class="filter-label">Filter:</span>
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="offensive">Offensive Tools</button>
+            <button class="filter-btn" data-filter="malware">Malware / Payload</button>
+            <button class="filter-btn" data-filter="web">Web Exploitation</button>
+            <button class="filter-btn" data-filter="android">Android / Forensics</button>
+        </div>
+
+        <!-- PROJECT_GRID -->
+        <div class="projects-grid">
+
+            <!-- EyePwn -->
+            <div class="project-card" data-cat="offensive web">
+                <div>
+                    <div class="project-title">EyePwn</div>
+                    <p class="project-desc">
+                        A reconnaissance & exploitation framework focused on IP cameras / CCTV attack surfaces.
+                        Automates discovery, weak credential checks, and misconfiguration analysis.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Offensive</span>
+                        <span class="tag">Recon</span>
+                    </div>
+                </div>
+                <div class="project-footer-link">
+                    <a href="https://github.com/Hasan-Malek/EyePwn" target="_blank" class="btn2">
+                        <i class="fab fa-github"></i> View</a>
+                </div>
+            </div>
+
+            <!-- Pwned-EMI -->
+            <div class="project-card" data-cat="android offensive">
+                <div>
+                    <div class="project-title">Pwned-EMI</div>
+                    <p class="project-desc">
+                        A low-level utility to bypass EMI-style restrictions and extract data from locked Android
+                        environments for research and forensics.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">C</span>
+                        <span class="tag">Android</span>
+                        <span class="tag">Forensics</span>
+                    </div>
+                </div>
+                <div class="project-footer-link">
+                    <a href="https://github.com/Hasan-Malek/Pwned-EMI" target="_blank" class="btn2">
+                        <i class="fab fa-github"></i> View</a>
+                </div>
+            </div>
+
+            <!-- Wordpress_Fish -->
+            <div class="project-card" data-cat="web offensive malware">
+                <div>
+                    <div class="project-title">Wordpress_Fish</div>
+                    <p class="project-desc">
+                        A phishing-style WordPress admin login clone built for awareness + training.
+                        Demonstrates how easily credentials can be stolen via realistic fake panels.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">Web</span>
+                        <span class="tag">Phishing</span>
+                    </div>
+                </div>
+                <div class="project-footer-link">
+                    <a href="https://github.com/Hasan-Malek/Wordpress_Fish" target="_blank" class="btn2">
+                        <i class="fab fa-github"></i> View</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="tl-end" style="margin-top:50px;">
+            More tools, payloads and experiments are in progress.<br>
+            <strong>The codebase will keep evolving — just like the threats.</strong>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2025 Hasan Malek</p>
+    </footer>
+
+    <!-- MASTER JS -->
+    <script src="script.js"></script>
+
+    <script>
+        // Filtering Logic
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+
+                projectCards.forEach(card => {
+                    const cats = card.dataset.cat.split(' ');
+                    card.style.display = (filter === 'all' || cats.includes(filter)) ? 'flex' : 'none';
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

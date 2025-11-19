@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs | Hasan Malek</title>
+
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+
+    <meta name="description"
+        content="Cybersecurity Blogs & Writeups by Hasan Malek — Exploits, Malware, Forensics, Android Security, and Research Notes.">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="description"
+        content="Cybersecurity blogs & writeups by Hasan Malek. Research articles on malware, exploit development, Android forensics, payload evasion, and real-world cybercrime investigations.">
+    <meta name="author" content="Hasan Malek">
+
+    <meta property="og:title" content="Blogs & Writeups — Hasan Malek">
+    <meta property="og:description"
+        content="Explore research posts on malware evasion, exploit techniques, Android forensics, and cybersecurity investigations by Hasan Malek.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hasanmalek.github.io/blogs.html">
+    <meta property="og:image" content="https://hasanmalek.github.io/blogs/thumbs/t1.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blogs & Writeups — Hasan Malek">
+    <meta name="twitter:description"
+        content="Exploit development, malware research, Android analysis, and cybercrime insights by Hasan Malek.">
+    <meta name="twitter:image" content="https://hasanmalek.github.io/blogs/thumbs/t1.png">
+
+    <link rel="canonical" href="https://hasanmalek.github.io/blogs.html">
+
+
+    <style>
+        .blogs-section {
+            margin-top: 35px;
+        }
+
+        .blog-list {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .blog-card {
+            display: flex;
+            gap: 20px;
+            padding: 16px;
+            text-decoration: none;
+            color: #00ff55;
+            border: 1px solid #00ff55;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.75);
+            box-shadow: 0 0 14px rgba(0, 255, 85, 0.35);
+            transition: 0.25s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 18px #00ff55;
+        }
+
+        .blog-thumb {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 0 12px rgba(0, 255, 85, 0.3);
+        }
+
+        .blog-content {
+            flex: 1;
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            text-shadow: 0 0 6px #00ff55;
+            margin-bottom: 6px;
+        }
+
+        .blog-meta {
+            opacity: 0.7;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+
+        .blog-desc {
+            opacity: 0.85;
+            font-size: 1rem;
+            line-height: 1.45rem;
+        }
+
+        @media(max-width: 700px) {
+            .blog-card {
+                flex-direction: column;
+            }
+
+            .blog-thumb {
+                width: 100%;
+                height: 220px;
+                /* Larger full-width */
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="scanlines"></div>
+
+    <!-- MOBILE MENU BUTTON -->
+    <div class="menu-btn">≡</div>
+
+    <!-- FULLSCREEN MOBILE MENU -->
+    <div id="mobileMenu" class="mobile-menu" role="dialog" aria-hidden="true">
+        <div class="close-btn" onclick="closeMenu()">✖</div>
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="blogs.html" class="active">Blogs</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <header>
+        <h1 class="page-title">Blogs & Writeups</h1>
+        <p class="subtitle">Security Research · Exploits · Malware · Forensics</p>
+    </header>
+
+    <nav>
+        <a href="./">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="blogs.html" class="active">Blogs</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <section class="section blogs-section">
+
+        <h2>Latest Posts</h2>
+
+        <div class="blog-list">
+
+            <!-- BLOG 1 -->
+            <a href="blogs/snake-malware.html" class="blog-card">
+                <img src="blogs/thumbs/t1.png" class="blog-thumb" alt="Snake Malware">
+                <div class="blog-content">
+                    <div class="blog-title">Snake Malware Evasion Techniques</div>
+                    <div class="blog-meta">Jan 2025 · Malware · Evasion</div>
+                    <div class="blog-desc">
+                        How a harmless-looking Snake game hides a stealth payload using thread masking &
+                        execution cloaking.
+                    </div>
+                </div>
+            </a>
+
+            <!-- BLOG 2 -->
+            <a href="blogs/android-forensics.html" class="blog-card">
+                <img src="blogs/thumbs/android.jpg" class="blog-thumb" alt="Android Forensics">
+                <div class="blog-content">
+                    <div class="blog-title">Android Forensics & Log Extraction Pipelines</div>
+                    <div class="blog-meta">Jan 2025 · Android · Forensics</div>
+                    <div class="blog-desc">
+                        Breaking into Android internals using forensic-grade acquisition, logs, artifacts, and runtime
+                        hooks.
+                    </div>
+                </div>
+            </a>
+
+            <!-- Add more blog cards here -->
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2025 Hasan Malek</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
