@@ -217,7 +217,9 @@ footer {
     top: 20px;
     right: 20px;
     cursor: pointer;
-    z-index: 1001;
+
+    z-index: 5000;        /* NEW: always above everything */
+    isolation: isolate;   /* NEW: makes it its own stacking context */
 }
 
 .menu-btn.show-menu {
@@ -256,7 +258,9 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+
+    z-index: 6000;       /* ABOVE scanlines + content */
+    isolation: isolate;  /* NEW */
 }
 
 .mobile-menu a {
