@@ -14,7 +14,7 @@ const isIndex =
     mainContent !== null &&
     siteContent !== null;
 
-const firstVisit = !sessionStorage.getItem("visitedBefore");
+const firstVisit = !localStorage.getItem("visitedBefore");
 
 // -----------------------------
 // INDEX PAGE ANIMATION HANDLING
@@ -26,7 +26,8 @@ if (isIndex) {
     const revealTime = whoamiDelay + typingDuration + revealExtra;
 
     if (firstVisit) {
-        sessionStorage.setItem("visitedBefore", "true");
+
+        localStorage.setItem("visitedBefore", "true");
 
         setTimeout(() => {
             mainContent.classList.add("show");
