@@ -65,3 +65,6 @@ window.addEventListener("scroll", () => {
         menuBtn.style.pointerEvents = "auto";
     }
 });
+
+menuBtn.style.opacity = "1";
+menuBtn.style.pointerEvents = "auto";
