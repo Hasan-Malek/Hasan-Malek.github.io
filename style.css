@@ -230,9 +230,9 @@ footer {
         display: none;
     }
 
-    /* .menu-btn {
+    .menu-btn {
         display: none;
-    } */
+    }
 
     .menu-btn.show-menu {
         display: block;
