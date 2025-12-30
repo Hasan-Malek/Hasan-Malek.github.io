@@ -73,6 +73,9 @@
             border: 1px solid rgba(0, 255, 85, 0.7);
             box-shadow: 0 0 15px rgba(0, 255, 85, 0.35);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
+            background: #000;
+            isolation: isolate; /* blocks blending/opacity bleed */
+            z-index: 1000;
         }
 
         .blog-img:hover {
