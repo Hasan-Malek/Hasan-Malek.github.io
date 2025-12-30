@@ -200,60 +200,53 @@
             <img src="thumbs/android.jpg" class="blog-img" alt="Android 2FA Security">
 
             <p>
-                Malware doesn’t need to look like malware. It just needs to look like something you trust.
-                A terminal game is perfect — predictable, innocent, CPU-active, and noisy enough to camouflage
-                background activity.
+                Let me share my point of view on Android security and why two-factor authentication is not enough to secure your devices.
             </p>
 
-            <div class="highlight"><strong>Visual Distraction + Thread Cloaking = Perfect Evasion Pair</strong></div>
+            <div class="highlight"><strong>Passwords + 2FA ≠ Fully Secured</strong></div>
 
             <p>
-                This post breaks down how a harmless Snake game can run a stealth payload by blending malicious code
-                into the game loop itself — avoiding suspicious processes, masking timing patterns, and hiding under
-                expected CPU noise.
+                Since I work in the Cyber Crime Branch, I face these types of cases on a daily basis — cases where users have strong passwords, have enabled 2FA, and still lose their money, get their accounts hacked, and face many other serious issues.
+                I want to share what is happening with most people nowadays and how it happens. With my three years of experience in the Cyber Crime Cell, I will also share one real case related to this topic.
             </p>
 
-            <h2>1. Distraction as a Security Blind Spot</h2>
             <p>
-                When a user <strong>expects</strong> terminal activity (games, animations, progress bars), they stop
-                questioning it.
-                Attackers take advantage by attaching malicious triggers to:
+                This blog is not about what 2FA is or how to use it in detail. Still, let’s understand it briefly.
+            </p>
+
+            <h2>What is Two-Factor Authentication (2FA)?</h2>
+            <p>
+                <strong>Two-factor authentication</strong> is a security process that verifies a user using two different sources of identity before granting access.
+                Usually, it includes:
             </p>
 
             <ul>
-                <li>frame updates</li>
-                <li>tick timers</li>
-                <li>key events</li>
-                <li>UI refresh cycles</li>
+                <li>Something you know — a password or PIN</li>
+                <li>Something you have — an OTP via SMS, an authenticator app, or a push notification</li>
             </ul>
 
-            <div class="highlight">Humans trust what they visually see. Attackers hide in what you visually expect.
+            <div>For example, when you log into an account, you enter your password, and then you enter an OTP sent to your phone number or email.
             </div>
 
-            <h2>2. Tech Stack Behind SPY (from your snake.py)</h2>
-            <p>The SPY codebase uses a deceptively powerful set of modules:</p>
+            <h2>Now, Let’s Come to the Main Point</h2>
+            <p>Today, everywhere you look — awareness programs, news articles, blogs, social media — everyone says the same thing:</p>
 
             <ul>
-                <li><strong>curses</strong> — redraws the terminal without flicker</li>
-                <li><strong>threading</strong> — runs a payload silently in background</li>
-                <li><strong>requests</strong> — fetches remote files/payloads</li>
-                <li><strong>time</strong> — controls the main loop speed</li>
-                <li><strong>os / subprocess</strong> — executes downloaded payloads</li>
+                <li><strong>“Always keep two-step verification enabled on your accounts and devices.”</strong></li>
             </ul>
 
             <div class="highlight">
-                The game loop becomes the camouflage.
-                The background thread becomes the weapon.
+                And this advice is correct. I am not against it.
             </div>
 
-            <h2>3. Thread Masking — The Real Evasion Trick</h2>
+            <h2>So then why am I writing this blog?</h2>
 
-            <p>The malicious thread hides because:</p>
-            <ul>
-                <li>it starts with the game (no “new suspicious thread”)</li>
-                <li>it only acts every N ticks (random pattern = invisible)</li>
-                <li>CPU noise looks normal due to expected animations</li>
-            </ul>
+            <p>Let’s understand that.</p>
+            <p>
+                I am not talking about future threats like AI or quantum computers. I am talking about something that is already happening right now — without any advanced AI or futuristic technology.
+                And the thing that looks very difficult to most people is actually very easy in reality:
+                <strong>Accounts getting hacked even after 2FA is enabled.</strong>
+            </p>
 
             <h2>4. Execution Cloaking Inside UI Loops</h2>
 
