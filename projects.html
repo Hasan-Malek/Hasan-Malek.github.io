@@ -183,19 +183,229 @@
             font-size: 0.9rem;
         }
 
+        /* ============================================
+           TOOLS BUNDLE SECTION
+        ============================================ */
+
+        .tools-section {
+            margin-top: 80px;
+        }
+
+        .tools-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tools-header h2 {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin: 0;
+        }
+
+        .tools-badge-new {
+            font-size: 0.72rem;
+            background: #00ff55;
+            color: #000;
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-family: 'Share Tech Mono', monospace;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 0 8px #00ff55;
+            animation: pulseBadge 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseBadge {
+            0%, 100% { box-shadow: 0 0 6px #00ff55; }
+            50%       { box-shadow: 0 0 16px #00ff55; }
+        }
+
+        .tools-intro {
+            opacity: 0.85;
+            margin-bottom: 25px;
+            font-size: 0.97rem;
+            line-height: 1.6rem;
+            border-left: 2px solid #00ff55;
+            padding-left: 14px;
+        }
+
+        /* TOOLS FILTER BAR */
+        .tools-filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 0 0 28px 0;
+        }
+
+        /* TOOLS GRID */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 22px;
+        }
+
+        /* TOOL CARD */
+        .tool-card {
+            border: 1px solid rgba(0, 255, 85, 0.5);
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.85);
+            box-shadow: 0 0 8px rgba(0, 255, 85, 0.25);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 18px rgba(0, 255, 85, 0.7);
+            border-color: #00ff55;
+        }
+
+        /* Fixed-size image container */
+        .tool-img-wrap {
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            background: rgba(0, 255, 85, 0.04);
+            border-bottom: 1px solid rgba(0, 255, 85, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .tool-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.85) saturate(0.9);
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+
+        .tool-card:hover .tool-img-wrap img {
+            filter: brightness(1) saturate(1.1);
+            transform: scale(1.04);
+        }
+
+        /* Placeholder icon when no image */
+        .tool-img-placeholder {
+            font-size: 3rem;
+            opacity: 0.35;
+            color: #00ff55;
+        }
+
+        .tool-body {
+            padding: 14px 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-name {
+            font-size: 1.1rem;
+            text-shadow: 0 0 6px #00ff55;
+            margin-bottom: 6px;
+        }
+
+        .tool-desc {
+            font-size: 0.88rem;
+            opacity: 0.85;
+            line-height: 1.45rem;
+            flex: 1;
+            margin-bottom: 12px;
+        }
+
+        .tool-tags {
+            margin-bottom: 12px;
+        }
+
+        /* Platform tag color variants */
+        .tag-apk   { border-color: #00ffcc; color: #00ffcc; }
+        .tag-exe   { border-color: #ff9900; color: #ff9900; }
+        .tag-msi   { border-color: #ff9900; color: #ff9900; }
+        .tag-py    { border-color: #4ec9f0; color: #4ec9f0; }
+        .tag-sh    { border-color: #c586c0; color: #c586c0; }
+        .tag-bat   { border-color: #dcdcaa; color: #dcdcaa; }
+
+        .tool-footer {
+            padding: 10px 16px 14px;
+            border-top: 1px solid rgba(0, 255, 85, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: #00ff55;
+            color: #000;
+            padding: 7px 14px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.88rem;
+            font-weight: 700;
+            transition: background 0.2s, box-shadow 0.2s;
+            white-space: nowrap;
+        }
+
+        .btn-download:hover {
+            background: #55ff99;
+            box-shadow: 0 0 12px #00ff55;
+        }
+
+        .tool-filesize {
+            font-size: 0.78rem;
+            opacity: 0.55;
+            white-space: nowrap;
+        }
+
+        /* Divider between Projects and Tools */
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #00ff55, transparent);
+            margin: 70px 0 0 0;
+            opacity: 0.5;
+        }
+
         /* MOBILE TWEAKS */
         @media (max-width: 700px) {
-            .project-hero-title {
-                font-size: 1.3rem;
+            .project-hero-title { font-size: 1.3rem; }
+            .project-hero { padding: 16px 14px; }
+            .projects-grid { grid-template-columns: 1fr; }
+
+            .tools-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 14px;
             }
 
-            .project-hero {
-                padding: 16px 14px;
+            .tool-img-wrap { height: 120px; }
+
+            .tool-body { padding: 10px 12px; }
+            .tool-name { font-size: 1rem; }
+            .tool-desc { font-size: 0.82rem; }
+
+            .tool-footer {
+                padding: 8px 12px 12px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
+            .btn-download { width: 100%; justify-content: center; }
+        }
+
+        @media (max-width: 400px) {
+            .tools-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -210,7 +420,6 @@
     <!-- FULLSCREEN MOBILE MENU -->
     <div id="mobileMenu" class="mobile-menu" role="dialog" aria-hidden="true">
         <div class="close-btn" onclick="closeMenu()">✖</div>
-
         <a href="index.html">Home</a>
         <a href="about.html">About Me</a>
         <a href="experience.html">Experience</a>
@@ -235,9 +444,13 @@
 
     <section class="section projects-section">
 
+        <!-- ========================
+             PROJECTS
+        ========================= -->
+
         <h2>Featured Project</h2>
         <p class="projects-intro">
-            These are not “hello world” repos.
+            These are not "hello world" repos.
             Every project below was built either to break something, understand something, or protect someone.
         </p>
 
@@ -273,8 +486,8 @@
             <button class="filter-btn" data-filter="android">Android / Forensics</button>
         </div>
 
-        <!-- PROJECT_GRID -->
-        <div class="projects-grid">
+        <!-- PROJECT GRID -->
+        <div class="projects-grid" id="projectsGrid">
 
             <!-- EyePwn -->
             <div class="project-card" data-cat="offensive web">
@@ -343,6 +556,196 @@
             <strong>The codebase will keep evolving — just like the threats.</strong>
         </div>
 
+
+        <!-- ========================
+             OPEN SOURCE TOOLS
+        ========================= -->
+
+        <div class="section-divider"></div>
+
+        <div class="tools-section">
+
+            <div class="tools-header">
+                <h2>Open Source Tools</h2>
+                <span class="tools-badge-new">Free Download</span>
+            </div>
+
+            <p class="tools-intro">
+                Real tools. Built for real work — investigations, forensics, hardening, and research.
+                Download directly. No signup. No tracking. Just binaries that do what they're supposed to.
+            </p>
+
+            <!-- TOOLS FILTER BAR -->
+            <div class="tools-filter-bar">
+                <span class="filter-label">Filter:</span>
+                <button class="filter-btn tools-filter-btn active" data-tfilter="all">All</button>
+                <button class="filter-btn tools-filter-btn" data-tfilter="apk">Android APK</button>
+                <button class="filter-btn tools-filter-btn" data-tfilter="windows">Windows</button>
+                <button class="filter-btn tools-filter-btn" data-tfilter="script">Scripts</button>
+            </div>
+
+            <!-- TOOLS GRID -->
+            <div class="tools-grid" id="toolsGrid">
+
+                <!-- ── TOOL 1: m-kavach (APK) ── -->
+                <div class="tool-card" data-tcat="apk">
+                    <div class="tool-img-wrap">
+                        <img src="tools/apps/m-kavach-thumb.jpg" alt="m-Kavach"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="tool-img-placeholder" style="display:none;">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <div class="tool-body">
+                        <div class="tool-name">m-Kavach</div>
+                        <p class="tool-desc">
+                            Android security app for device hardening, suspicious app detection,
+                            and malware surface analysis. Designed for investigators and security-aware users.
+                        </p>
+                        <div class="tool-tags">
+                            <span class="tag tag-apk">APK</span>
+                            <span class="tag">Android</span>
+                            <span class="tag">Forensics</span>
+                        </div>
+                    </div>
+                    <div class="tool-footer">
+                        <a href="tools/apps/m-kavach.apk" download class="btn-download">
+                            <i class="fas fa-download"></i> Download APK
+                        </a>
+                        <span class="tool-filesize">— MB</span>
+                    </div>
+                </div>
+
+                <!-- ── TOOL 2: Anti Spy (APK) ── -->
+                <div class="tool-card" data-tcat="apk">
+                    <div class="tool-img-wrap">
+                        <img src="tools/apps/anti-spy-thumb.jpg" alt="Anti Spy"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="tool-img-placeholder" style="display:none;">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <div class="tool-body">
+                        <div class="tool-name">Anti Spy</div>
+                        <p class="tool-desc">
+                            Another Android security app for full device scanning, suspicious app detection,
+                            and malware surface analysis. Designed for investigators and security-aware users.
+                        </p>
+                        <div class="tool-tags">
+                            <span class="tag tag-apk">APK</span>
+                            <span class="tag">Android</span>
+                            <span class="tag">Forensics</span>
+                        </div>
+                    </div>
+                    <div class="tool-footer">
+                        <a href="tools/apps/anti-spy.apk" download class="btn-download">
+                            <i class="fas fa-download"></i> Download APK
+                        </a>
+                        <span class="tool-filesize">— MB</span>
+                    </div>
+                </div>
+
+                <!-- ── TOOL 3: Package Manager (APK) ── -->
+                <div class="tool-card" data-tcat="apk">
+                    <div class="tool-img-wrap">
+                        <img src="tools/apps/package-manager-thumb.jpg" alt="Package Manager"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="tool-img-placeholder" style="display:none;">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <div class="tool-body">
+                        <div class="tool-name">Package Manager</div>
+                        <p class="tool-desc">
+                            A simple yet effective tool for managing Android packages, including installation, removal, and inspection.
+                        </p>
+                        <div class="tool-tags">
+                            <span class="tag tag-apk">APK</span>
+                            <span class="tag">Android</span>
+                            <span class="tag">Forensics</span>
+                        </div>
+                    </div>
+                    <div class="tool-footer">
+                        <a href="tools/apps/package-manager.apk" download class="btn-download">
+                            <i class="fas fa-download"></i> Download APK
+                        </a>
+                        <span class="tool-filesize">— MB</span>
+                    </div>
+                </div>
+
+                <!-- ── TOOL 4: Avast Offline Installer (EXE) ── -->
+                <div class="tool-card" data-tcat="windows">
+                    <div class="tool-img-wrap">
+                        <img src="tools/softwares/avast-thumb.jpg" alt="Avast Offline Installer"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="tool-img-placeholder" style="display:none;">
+                            <i class="fas fa-bug-slash"></i>
+                        </div>
+                    </div>
+                    <div class="tool-body">
+                        <div class="tool-name">Avast Offline Installer</div>
+                        <p class="tool-desc">
+                            Full offline installer for Avast Antivirus — useful when deploying protection
+                            on air-gapped or low-bandwidth machines during field investigations.
+                        </p>
+                        <div class="tool-tags">
+                            <span class="tag tag-exe">EXE</span>
+                            <span class="tag">Windows</span>
+                            <span class="tag">Antivirus</span>
+                        </div>
+                    </div>
+                    <div class="tool-footer">
+                        <a href="tools/softwares/avast-offline-installer.exe" download class="btn-download">
+                            <i class="fas fa-download"></i> Download EXE
+                        </a>
+                        <span class="tool-filesize">— MB</span>
+                    </div>
+                </div>
+
+                <!-- ── TOOL : clear.sh (Script) ── -->
+                <div class="tool-card" data-tcat="script">
+                    <div class="tool-img-wrap">
+                        <img src="tools/scripts/clear-thumb.jpg" alt="clear.sh"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="tool-img-placeholder" style="display:none;">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                    </div>
+                    <div class="tool-body">
+                        <div class="tool-name">clear.sh</div>
+                        <p class="tool-desc">
+                            Bash script for rapid system log clearing and artifact wiping on Linux.
+                            Useful for post-investigation cleanup or sanitizing test environments.
+                        </p>
+                        <div class="tool-tags">
+                            <span class="tag tag-sh">BASH</span>
+                            <span class="tag">Linux</span>
+                            <span class="tag">Cleanup</span>
+                        </div>
+                    </div>
+                    <div class="tool-footer">
+                        <a href="tools/scripts/clear.sh" download class="btn-download">
+                            <i class="fas fa-download"></i> Download Script
+                        </a>
+                        <span class="tool-filesize">— KB</span>
+                    </div>
+                </div>
+
+                <!-- ══ ADD MORE TOOL CARDS HERE ══
+                     Copy any .tool-card block above, change:
+                       data-tcat  →  apk | windows | script
+                       img src    →  path to your thumb image
+                       tool-name  →  tool display name
+                       tool-desc  →  what it does
+                       tag-*      →  tag-apk / tag-exe / tag-msi / tag-py / tag-sh / tag-bat
+                       href       →  path to your actual file
+                       filesize   →  e.g. "12.4 MB"
+                ═══════════════════════════════ -->
+
+            </div><!-- /tools-grid -->
+
+        </div><!-- /tools-section -->
+
     </section>
 
     <footer>
@@ -353,25 +756,37 @@
     <script src="./script.js"></script>
 
     <script>
-        // Filtering Logic
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
+        // ── Projects filter ──
+        const filterButtons = document.querySelectorAll('.filter-btn:not(.tools-filter-btn)');
+        const projectCards  = document.querySelectorAll('#projectsGrid .project-card');
 
         filterButtons.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterButtons.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
                 const filter = btn.dataset.filter;
-
                 projectCards.forEach(card => {
                     const cats = card.dataset.cat.split(' ');
                     card.style.display = (filter === 'all' || cats.includes(filter)) ? 'flex' : 'none';
                 });
             });
         });
+
+        // ── Tools filter ──
+        const toolsFilterBtns = document.querySelectorAll('.tools-filter-btn');
+        const toolCards        = document.querySelectorAll('#toolsGrid .tool-card');
+
+        toolsFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                toolsFilterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.tfilter;
+                toolCards.forEach(card => {
+                    card.style.display = (filter === 'all' || card.dataset.tcat === filter) ? 'flex' : 'none';
+                });
+            });
+        });
     </script>
 
 </body>
-
 </html>
